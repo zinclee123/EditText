@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="EditText">
+        <attr name="et_showClearIcon" format="boolean"/>
+        <attr name="et_clearIcon" format="reference"/>
+        <attr name="et_clearIconColor" format="string|reference"/>
+    </declare-styleable>
+</resources>
