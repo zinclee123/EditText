@@ -48,7 +48,7 @@ public class EditText extends android.support.v7.widget.AppCompatEditText implem
             }
         }
         if (mIconColor == -1) {
-            mIconColor = getColorAccent();
+            mIconColor = getEditTextActiveColor();
         }
 
         //获取图标
@@ -163,9 +163,9 @@ public class EditText extends android.support.v7.widget.AppCompatEditText implem
         autoShow();
     }
 
-    private int getColorAccent() {
+    private int getEditTextActiveColor() {
         TypedArray array = getContext().getTheme().obtainStyledAttributes(new int[]{
-                android.R.attr.colorAccent
+                android.R.attr.colorControlActivated
         });
         int colorAccent = array.getColor(0, 0xF5F5F5);
         array.recycle();
