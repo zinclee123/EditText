@@ -47,6 +47,12 @@ public class EditText extends android.support.v7.widget.AppCompatEditText implem
                 mIconColor = Color.parseColor(colorString);
             }
         }
+<<<<<<< HEAD
+=======
+        if (mIconColor == -1) {
+            mIconColor = getEditTextActiveColor();
+        }
+>>>>>>> 41a6cf44e21084750e4b5b5b4602ecc9ed9d6f42
 
         //获取图标
         mIconResId = a.getResourceId(R.styleable.EditText_et_clearIcon, -1);
@@ -164,9 +170,9 @@ public class EditText extends android.support.v7.widget.AppCompatEditText implem
         autoShow();
     }
 
-    private int getColorAccent() {
+    private int getEditTextActiveColor() {
         TypedArray array = getContext().getTheme().obtainStyledAttributes(new int[]{
-                android.R.attr.colorAccent
+                android.R.attr.colorControlActivated
         });
         int colorAccent = array.getColor(0, 0xF5F5F5);
         array.recycle();
