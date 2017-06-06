@@ -47,12 +47,6 @@ public class EditText extends android.support.v7.widget.AppCompatEditText implem
                 mIconColor = Color.parseColor(colorString);
             }
         }
-<<<<<<< HEAD
-=======
-        if (mIconColor == -1) {
-            mIconColor = getEditTextActiveColor();
-        }
->>>>>>> 41a6cf44e21084750e4b5b5b4602ecc9ed9d6f42
 
         //获取图标
         mIconResId = a.getResourceId(R.styleable.EditText_et_clearIcon, -1);
@@ -62,7 +56,7 @@ public class EditText extends android.support.v7.widget.AppCompatEditText implem
 
     private void init(final Context context) {
         if (mIconColor == -1) {
-            mIconColor = getColorAccent();
+            mIconColor = getEditTextActiveColor();
         }
 
         if (mIconResId == -1) {
