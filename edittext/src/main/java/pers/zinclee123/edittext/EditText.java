@@ -47,21 +47,22 @@ public class EditText extends android.support.v7.widget.AppCompatEditText implem
                 mIconColor = Color.parseColor(colorString);
             }
         }
-        if (mIconColor == -1) {
-            mIconColor = getColorAccent();
-        }
 
         //获取图标
         mIconResId = a.getResourceId(R.styleable.EditText_et_clearIcon, -1);
-        if (mIconResId == -1) {
-            mIconResId = R.drawable.clear_text;
-        }
-
         a.recycle();
         init(context);
     }
 
     private void init(final Context context) {
+        if (mIconColor == -1) {
+            mIconColor = getColorAccent();
+        }
+
+        if (mIconResId == -1) {
+            mIconResId = R.drawable.clear_text;
+        }
+
         setClearIcon(mIconResId);
         setClearIconVisible(false);
         super.setOnTouchListener(this);
