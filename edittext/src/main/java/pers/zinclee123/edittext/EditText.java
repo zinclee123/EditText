@@ -11,6 +11,7 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -165,12 +166,16 @@ public class EditText extends android.support.v7.widget.AppCompatEditText implem
     }
 
     private int getEditTextActiveColor() {
-        TypedArray array = getContext().getTheme().obtainStyledAttributes(new int[]{
-                android.R.attr.colorControlActivated
-        });
-        int colorAccent = array.getColor(0, 0xF5F5F5);
-        array.recycle();
-        return colorAccent;
+//        TypedArray array = getContext().getTheme().obtainStyledAttributes(new int[]{
+//                android.R.attr.colorControlActivated
+//        });
+//        int colorAccent = array.getColor(0, 0xF5F5F5);
+//        array.recycle();
+//        return colorAccent;
+
+        TypedValue typedValue = new TypedValue();
+        getContext().getTheme().resolveAttribute(R.attr.colorControlActivated, typedValue, true);
+        return typedValue.data;
     }
 
     private void autoShow() {
